@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Menu For You</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for a calm, elegant look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="menu-card">
+        <!-- Header -->
+        <header>
+            <span class="subtitle">Est. Us • CHAOS & NONSTOP LAUGHTER</span>
+            <h1>The Me'N'U</h1>
+            <p class="intro">This has definetely been a crazy ass 3 months(did make some of my best memories). Lots of ups and downs and heavy convos but every rough patch just proved that you're my favourite person to figure things out with.</p>
+        </header>
+
+        <!-- Menu Courses (Accordion Sections) -->
+        <div class="courses-container">
+
+            <!-- Course 1: Appetizer -->
+            <div class="course-item">
+                <button class="course-header" onclick="toggleCourse(this)">
+                    <span class="course-name">Appetizer: Fried Chicken</span>
+                    <span class="arrow">↓</span>
+                </button>
+                <div class="course-content">
+                    <img src="first.jpeg" alt="The first text" class="custom-photo">
+                    <p>I'm glad your chalant ass decided to reply to my story and well maybe I added you to my cf for that reason too. And then this turned into 24/7 convos and I was hooked. Talking to you kinda became my everyday routine and a thing I looked forward to every day, and slowly the texts turned into calls, and I never realised how quickly time went by when I was talking to you(I cannot believe m being this cheesy so pls slap me next time). </p>
+                     <div class="photo-row">
+            <img src="goofy.jpeg" alt="Ur goofy ass smile" class="custom-photo">
+            <img src="weirdo.jpeg" alt="Weirdo" class="custom-photo">
+                    </div>
+                    <p>U do have a pretty cute smile (I'm definitely not saying tht coz u say it to me) but I like making u laugh and smile. </p>
+                  
+                </div>
+            </div>
+
+            <!-- Course 2: Main Course -->
+            <div class="course-item">
+                <button class="course-header" onclick="toggleCourse(this)">
+                    <span class="course-name">Appetizer : Sushi</span>
+                    <span class="arrow">↓</span>
+                </button>
+                <div class="course-content">
+                    <p>Well then u showed ur odep tendencies(pls stop trying to get with my mom) and ik u were cracked in the head and unfortunately I like them a lil cracked. And how can i forget your foot fetish(i still stand by what i said- tht is second base stuff).I liked listening to you talk about stuff and I DEFINITELY LOVED CHIKNI CHAMELI</p>
+                  <div class="photo-row">
+            <img src="odep.jpeg" alt="Odep shit" class="custom-photo">
+            <img src="foot.jpeg" alt="Foot fetish" class="custom-photo">
+                  </div>
+                  <video src="best.mp4" controls class="custom-video"></video>
+                </div>
+            </div>
+
+          <div class="course-item">
+                <button class="course-header" onclick="toggleCourse(this)">
+                    <span class="course-name">Wrong Order: Mutton Kebab</span>
+                    <span class="arrow">↓</span>
+                </button>
+                <div class="course-content">
+                    <p>We definetely had a few downs. Ik i have some things I need to work on. Lot of bad decisions, slight miscommunications and big convos in the past 3 months.It did kinda hurt me when u said u r embarrased by me but its fine. Ik you still have to figure things out and I dont wanna rush u into anything but do know tht m not taking this for granted and you dont have to answer this rn obviously.nd it did k..I just made it bcoz i felt like it.</p>
+                </div>
+            </div>
+          <div class="course-item">
+                <button class="course-header" onclick="toggleCourse(this)">
+                    <span class="course-name">Main Course:Ramen</span>
+                    <span class="arrow">↓</span>
+                </button>
+                <div class="course-content">
+                    <p>I thought I had prepared myself for meeting you but I definitely hadn't. I'm glad u agreed to tht. Ik I have experience and shit but like none of tht compared to the fkin nerves I had holding ur hand in the rikshaw(i think tht might have been the most romantic thing till date for me) but anyways yea. The bandra idk if i shkd call it date or not but yeah it was amazing and it ended up having a very unexpected ending coz I never in a million yrs would have thought tht u would want to kiss me(again 10/10 shit). So what i wanna say is I like spending time with you nd idk bout u but i think we look good together choti madam. </p>
+                  <img src="firstdate.jpeg" alt="IG we look good together?" class="custom-photo">
+                </div>
+            </div>
+          
+
+            <!-- Course 3: The Check & Big Question -->
+            <div class="course-item final-course">
+                <button class="course-header" onclick="toggleCourse(this)">
+                    <span class="course-name">Brownie Baked Cheesecake and the Bill </span>
+                    <span class="arrow">↓</span>
+                </button>
+                <div class="course-content">
+                    <div class="bill-details">
+                        <p>Table For: <strong>Two</strong></p>
+                        <p>Vibe: <strong>Calm(hopefully), cozy and funny asf</strong></p>
+                        <hr class="receipt-line">
+                        <p class="total-text"><strong>Cost:</strong>U GONNA BE STUCK WITH ME</p>
+                    </div>
+                    
+                    <div class="proposal-box">
+                        <h3>Will you be the syrup to my waffles? A little messy at times, but life is just sad without you?</h3>
+                        <div class="button-group">
+                            <button id="yesBtn" onclick="sayYes()">Yes, absolutely 🤍</button>
+                            <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Success Message Overlay -->
+    <div id="successOverlay" class="hidden">
+        <div class="success-content">
+            <h2>Reservation Confirmed! 🎉</h2>
+            <p>Best decision ever. Let's go get your favourite food to celebrate.</p>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Accordion Function
+        function toggleCourse(button) {
+            const content = button.nextElementSibling;
+            button.classList.toggle("active");
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        // Playful "No" Button dodge
+        function moveButton() {
+            const noBtn = document.getElementById("noBtn");
+            const x = Math.random() * 150 - 75;
+            const y = Math.random() * 100 - 50;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        // "Yes" Button Action
+        function sayYes() {
+            document.getElementById("successOverlay").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
