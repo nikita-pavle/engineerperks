@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<!-- Hidden looping background music -->
+<audio id="bgMusic" src="song.mp3" loop autoplay></audio>
     <div class="menu-card">
         <!-- Header -->
         <header>
@@ -112,30 +113,36 @@
     </div>
 
     <script>
-        // Toggle Accordion Function
-        function toggleCourse(button) {
-            const content = button.nextElementSibling;
-            button.classList.toggle("active");
-            
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
+    // Toggle Accordion Function
+    function toggleCourse(button) {
+        // Trigger background music on first click (bypasses browser autoplay blocks)
+        const music = document.getElementById("bgMusic");
+        if (music.paused) {
+            music.play().catch(error => console.log("Audio play blocked:", error));
         }
 
-        // Playful "No" Button dodge
-        function moveButton() {
-            const noBtn = document.getElementById("noBtn");
-            const x = Math.random() * 150 - 75;
-            const y = Math.random() * 100 - 50;
-            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        const content = button.nextElementSibling;
+        button.classList.toggle("active");
+        
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
         }
+    }
 
-        // "Yes" Button Action
-        function sayYes() {
-            document.getElementById("successOverlay").classList.remove("hidden");
-        }
-    </script>
+    // Playful "No" Button dodge
+    function moveButton() {
+        const noBtn = document.getElementById("noBtn");
+        const x = Math.random() * 150 - 75;
+        const y = Math.random() * 100 - 50;
+        noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    // "Yes" Button Action
+    function sayYes() {
+        document.getElementById("successOverlay").classList.remove("hidden");
+    }
+</script>
 </body>
 </html>
