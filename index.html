@@ -10,7 +10,7 @@
 </head>
 <body>
 <!-- Hidden looping background music -->
-<audio id="bgMusic" src="song.mp3" loop autoplay></audio>
+<audio id="bgMusic" src="song.mp3" loop preloads="auto"></audio>
     <div class="menu-card">
         <!-- Header -->
         <header>
@@ -116,10 +116,12 @@
     // Toggle Accordion Function
     function toggleCourse(button) {
         // Trigger background music on first click (bypasses browser autoplay blocks)
+       document.addEventListener('click', function() {
         const music = document.getElementById("bgMusic");
         if (music.paused) {
             music.play().catch(error => console.log("Audio play blocked:", error));
         }
+    }, { once: true }); // Runs only on the very f
 
         const content = button.nextElementSibling;
         button.classList.toggle("active");
